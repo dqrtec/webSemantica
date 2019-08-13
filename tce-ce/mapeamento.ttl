@@ -1,0 +1,391 @@
+@prefix org: <http://org/>.
+@prefix xsd: <http://xsd/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix ex: <http://example.com/ns#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix osefaz: <http://osefaz/>.
+@prefix dbo: <http://dbo/>.
+
+#Tabela Negociante
+
+<#NegocianteTriplesMap>
+	rr:logicalTable[rr:tableName "negociantes"];
+	rr:subjectMap[
+		rr:template "Negociante/nome_negociante={nome_negociante}";
+		rr:class osefaz:Negociante;
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:docNegociante;
+		rr:objectMap [rr:column "numero_documento_negociante"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate foaf:name;
+		rr:objectMap [rr:column "nome_negociante"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate foaf:phone;
+		rr:objectMap [rr:column "fone_negociante"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:endereco;
+		rr:objectMap [rr:column "endereco_negociante"];
+	].
+  
+  
+#Tabela Nota Empenho
+
+<#NotaEmpenhoTriplesMap>
+	rr:logicalTable [ rr:tableName "notas_empenhos"];
+	rr:subjectMap[
+		rr:template "notas_empenhos/{numero_empenho}";
+		rr:class org:NotaEmpenho
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:dataEmissao;
+		rr:objectMap [rr:column "data_emissao_empenho"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:modalidade;
+		rr:objectMap [rr:column "modalidade_empenho"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:descricao;
+		rr:objectMap [rr:column "descricao_empenho"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:valorEmpenho;
+		rr:objectMap [rr:column "valor_empenhado"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:saldoAtual;
+		rr:objectMap [rr:column "valor_atual_saldo_dotacao"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:estadoEmpenho;
+		rr:objectMap [rr:column "estado_empenho"];
+	].
+
+  
+  
+#Tabela itens_notas_fiscais
+
+<#ItensNotasTriplesMap>
+	rr:logicalTable [ rr:tableName "itens_notas_fiscais"];
+	rr:subjectMap[
+		rr:template "itens_notas/codigo_municipio={codigo_municipio}&exercicio_orcamento={exercicio_orcamento}";
+		rr:class org:ItensNota
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:numeroItem;
+		rr:objectMap [rr:column "numero_nota_fiscal"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:descricao;
+		rr:objectMap [rr:column "descricao1_item"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:unidadeCompra;
+		rr:objectMap [rr:column "unidade_compra"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:valorUnitario;
+		rr:objectMap [rr:column "valor_unitario_item"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:valorTotal;
+		rr:objectMap [rr:column "valor_total_item"];
+	].
+
+#############################daniel2
+
+################## teste 1
+
+#Tabela despesa_projeto_atividade
+
+<#DespesasProjetoMap>
+	rr:logicalTable [ rr:tableName "despesa_projeto_atividade"];
+	rr:subjectMap[
+		rr:template "despesa_projeto_atividade/{codigo_projeto_atividade}";
+		rr:class org:DespesaProjetoAtividade
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:codProjetoAtividade;
+		rr:objectMap [rr:column "codigo_projeto_atividade"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:nomeProjeto;
+		rr:objectMap [rr:column "nome_projeto_atividade"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:descricao;
+		rr:objectMap [rr:column "descricao_projeto_atividade"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:valorTotal;
+		rr:objectMap [rr:column "valor_total_fixado_projeto_atividade"];
+	].
+
+#############################daniel3
+  
+  
+#Tabela programas
+
+<#ProgramaTriplesMap>
+	rr:logicalTable [ rr:tableName "programas"];
+	rr:subjectMap[
+		rr:template "programas/{codigo_programa}";
+		rr:class osefaz:Programa
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:codPrograma;
+		rr:objectMap [rr:column "codigo_programa"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:nomePrograma;
+		rr:objectMap [rr:column "nome_programa"];
+	].
+#############################daniel4
+  
+#Tabela itens_licitacoes
+
+<#ItensLicitacaoTriplesMap>
+	rr:logicalTable [ rr:tableName "itens_licitacoes"];
+	rr:subjectMap[
+		rr:template "itens_licitacoes/codigo_municipio={codigo_municipio}&data_realizacao_licitacao={data_realizacao_licitacao}";
+		rr:class org:ItensLicitacao
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:numeroItem;
+		rr:objectMap [rr:column "numero_sequencial_item_licitacao"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:descricao;
+		rr:objectMap [rr:column "descricao_item_licitacao"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:valorItem;
+		rr:objectMap [rr:column "valor_vencedor_item_licitacao"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:quantidade;
+		rr:objectMap [rr:column "numero_quantidade_item_licitacao"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:valorUnitario;
+		rr:objectMap [rr:column "valor_unitario_item_licitacao"];
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:numeroDocNegociante;
+		rr:objectMap [rr:column "numero_documento_negociante"];
+	].
+  
+  
+  #Tabela Despesa
+
+
+<#DespesaTriplesMap>
+	rr:logicalTable [ rr:tableName "despesa_elemento_projeto"];
+	rr:subjectMap[
+		rr:template "despesa_elemento_projeto/codigo_municipio={codigo_municipio}&exercicio_orcamento={exercicio_orcamento}";
+		rr:class org:Despesa
+	];
+	rr:predicateObjectMap[
+		rr:predicate osefaz:codigoDespesa;
+		rr:objectMap [rr:column "codigo_projeto_atividade"];
+	];
+	
+	rr:predicateObjectMap[
+		rr:predicate osefaz:valorTotal;
+		rr:objectMap [rr:column "valor_atual_categoria_economica"];
+	].
+#############################daniel5
+
+
+########## teste 2 
+
+## Pessoa Juridica
+  
+  
+<#MapeamentoPessoaJuridica>
+	rr:logicalTable [
+		rr:tableName "negociantes"
+	];
+	rr:subjectMap [
+		rr:template "pessoa_juridica/numero_documento_negociante={numero_documento_negociante}";
+		rr:class osefaz:pessoa_juridica;
+	];
+	 
+	rr:predicateObjectMap [
+		rr:predicate osefaz:cnpj;
+		rr:objectMap [
+			rr:column "numero_documento_negociante"
+		];
+	].
+
+
+## Pessoa Fisica
+  
+ 
+<#MapeamentoPessoaFisica>
+	rr:logicalTable [
+		rr:tableName "licitacoes"
+	];
+	rr:subjectMap [
+		rr:template "pessoa_fisica/cpf={cpf_gestor}";
+		rr:class osefaz:pessoa_fisica;
+	];
+	 
+	rr:predicateObjectMap [
+		rr:predicate osefaz:cpf;
+		rr:objectMap [
+			rr:column "cpf_gestor"
+		];
+	].
+
+
+
+## Pessoa Fisica
+  
+ 
+<#MapeamentoMunicipios>
+	rr:logicalTable [
+		rr:tableName "municipios"
+	];
+	rr:subjectMap [
+		rr:template "municipio/codigo_municipio={codigo_municipio}";
+		rr:class dbo:city;
+	];
+	 
+	rr:predicateObjectMap [
+		rr:predicate xsd:string;
+		rr:objectMap [
+			rr:column "codigo_municipio"
+		];
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate xsd:string;
+		rr:objectMap [
+			rr:column "nome_municipio"
+		];
+	].
+
+
+## Orcamento
+
+<#MapeamentoOrcamento>
+
+	rr:logicalTable [
+		rr:tableName "dados_orcamentos"
+	];
+	rr:subjectMap [
+		rr:template "orcamento/codigo_municipio={codigo_municipio}&exercicio_orcamento={exercicio_orcamento}";
+		rr:class osefaz:OrcamentoMunicipal;
+	];
+	 
+	rr:predicateObjectMap [
+		rr:predicate osefaz:exercicio;
+		rr:objectMap [
+			rr:column "exercicio_orcamento"
+		];
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate osefaz:numeroLei;
+		rr:objectMap [
+			rr:column "nu_lei_orcamento"
+		];
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate osefaz:valorTotal;
+		rr:objectMap [
+			rr:column "valor_total_fixado_orcamento"
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate osefaz:dataEnvio;
+		rr:objectMap [
+			rr:column "data_envio_loa"
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate osefaz:dataAprovacao;
+		rr:objectMap [
+			rr:column "data_aprov_loa"
+		];
+	].
+
+#############################daniel6
+
+
+## Tabela Receita
+
+<#MapeamentoReceita>
+
+	rr:logicalTable [
+		rr:tableName "orcamento_receita"
+	];
+	rr:subjectMap [
+		rr:template "receita/codigo_municipio={codigo_municipio}&exercicio_orcamento={exercicio_orcamento}";
+		rr:class osefaz:Receita;
+	];
+	 
+	rr:predicateObjectMap [
+		rr:predicate osefaz:rubrica;
+		rr:objectMap [
+			rr:column "codigo_rubrica"
+		];
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate osefaz:valorPrevisto;
+		rr:objectMap [
+			rr:column "valor_previsto"
+		];
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate osefaz:tipoFonte;
+		rr:objectMap [
+			rr:column "tipo_fonte"
+		];
+	].
+
+#############################daniel7
+
+
+## Edital de Licitacao
+
+
+<#MapeamentoPublicacaoEditais>
+
+	rr:logicalTable [
+		rr:tableName "publicacoes_editais_licitacoes"
+	];
+	rr:subjectMap [
+		rr:template "receita/codigo_municipio={codigo_municipio}&data_realizacao_licitacao={data_realizacao_licitacao}";
+		rr:class osefaz:EditalLicitacao;
+	];
+	 
+	rr:predicateObjectMap [
+		rr:predicate osefaz:descricao;
+		rr:objectMap [
+			rr:column "descricao_publicacao_edital"
+		];
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate osefaz:numeroEdital;
+		rr:objectMap [
+			rr:column "codigo_publicacao_edital"
+		];
+	];
+
+	rr:predicateObjectMap [
+		rr:predicate osefaz:dataPublicacao;
+		rr:objectMap [
+			rr:column "data_publicacao_edital"
+		];
+	].

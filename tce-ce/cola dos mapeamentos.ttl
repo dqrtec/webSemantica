@@ -1,0 +1,39 @@
+<#NegocianteTriplesMap>
+	Negociante
+		negociantes
+<#NotaEmpenhoTriplesMap>
+	NotaEmpenho
+		notas_empenhos
+<#ItensNotasTriplesMap>
+	ItensNota
+		itens_notas_fiscais
+<#DespesasProjetoMap>
+	DespesaProjetoAtividade
+		despesa_projeto_atividade
+<#ProgramaTriplesMap>
+	Programa
+		programas
+<#ItensLicitacaoTriplesMap>
+	ItensLicitacao
+		itens_licitacoes
+<#DespesaTriplesMap>
+	Despesa
+		despesa_elemento_projeto
+<#MapeamentoPessoaJuridica>
+	pessoa_juridica
+		negociantes
+<#MapeamentoPessoaFisica>
+	pessoa_fisica
+		licitacoes
+<#MapeamentoMunicipios>
+	city
+		municipios
+<#MapeamentoOrcamento>
+	OrcamentoMunicipal
+		dados_orcamentos
+<#MapeamentoReceita>
+	Receita
+		orcamento_receita
+<#MapeamentoPublicacaoEditais>
+	EditalLicitacao
+		publicacoes_editais_licitacoes

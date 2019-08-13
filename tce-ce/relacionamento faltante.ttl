@@ -1,0 +1,96 @@
+daniel2
+#############################
+	rr:predicateObjectMap [
+        rr:predicate osefaz:ItemDa;
+        rr:objectMap [ 
+        	rr:template "notas_empenhos/{numero_nota_empenho}";
+        ];
+    ].
+##############################
+
+
+daniel3
+#############################
+	rr:predicateObjectMap [
+        rr:predicate osefaz:elementoDa;
+        rr:objectMap [ 
+        	rr:template "despesa_elemento_projeto/codigo_municipio={codigo_municipio}&exercicio_orcamento={exercicio_orcamento}";
+        ];
+    ];
+##############################
+#############################
+	rr:predicateObjectMap [
+        rr:predicate osefaz:atividadeDo;
+        rr:objectMap [ 
+        	rr:template "programas/{codigo_programa}";
+        ];
+    ].
+##############################
+
+
+daniel4
+#############################
+	rr:predicateObjectMap [
+        rr:predicate osefaz:programaDo;
+        rr:objectMap [ 
+        	rr:template "orcamento/codigo_municipio={codigo_municipio}&exercicio_orcamento={exercicio_orcamento}";
+        ];
+    ].
+##############################
+
+
+daniel5
+#############################
+	rr:predicateObjectMap [
+        rr:predicate osefaz:exercicioDo;
+        rr:objectMap [ 
+        	rr:template "orcamento/codigo_municipio={codigo_municipio}&exercicio_orcamento={exercicio_orcamento}";
+        ];
+    ].
+##############################
+
+
+daniel6
+#############################
+	rr:predicateObjectMap [
+        rr:predicate osefaz:pertenceAo;
+        rr:objectMap [
+            rr:template "municipio/codigo_municipio={codigo_municipio}";
+        ];
+    ].
+##############################
+
+
+daniel7
+#############################
+	rr:predicateObjectMap [
+        rr:predicate osefaz:exercicioDo;
+        rr:objectMap [ 
+        	rr:template "orcamento/codigo_municipio={codigo_municipio}&exercicio_orcamento={exercicio_orcamento}";
+        ];
+    ];
+##############################
+#############################
+	rr:predicateObjectMap [
+        rr:predicate osefaz:receitaDo;
+        rr:objectMap [ 
+        	rr:template "orcamento/codigo_municipio={codigo_municipio}&exercicio_orcamento={exercicio_orcamento}";
+        ];
+    ].
+##############################
+
+
+
+
+
+
+
+
+#############################daniel1
+	rr:predicateObjectMap [
+        rr:predicate osefaz:empenhoDa;
+        rr:objectMap [ 
+        	rr:template "despesa_projeto_atividade/{codigo_projeto_atividade}";
+        ];
+    ].
+##############################

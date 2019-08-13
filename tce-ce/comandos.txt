@@ -1,0 +1,14 @@
+Configure o arquivo "config.properties" com as credenciais de acesso ao banco (jdbc.url,jdbc.user,jdbc.password)
+
+"maps.ttl" = Mapeamento em R2RML
+
+Comando de ajuda
+ontop help - Ajuda para todas as funcionalidades do ontop
+ontop help materialize - Ajuda para a ferramenta de materialização
+ontop help bootstrap - Ajuda para a ferramenta de mapeamento direto
+
+Materializar ontop:
+ontop materialize -m maps.ttl -p config.properties -o out.ttl -f turtle
+
+bootstrap ontop:
+ontop bootstrap -b "http://teste.com/" -p config.properties -m map.ttl -t onto.owl
